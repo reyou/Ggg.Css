@@ -13,7 +13,6 @@
       }
       .container {
         display: flex;
-        flex-direction: row;
         background-color: rgb(245, 102, 102);
         padding: 10px;
         border: 2px solid red;
@@ -28,29 +27,106 @@
       }
     </style>
     <h2>Flex Example</h2>
-    <p>
-      Container flex-direction:
-      <input id="flowDirectionTxt" type="text" value="row" />
-      <button id="submitButton">Submit</button>
-    </p>
+    <table>
+      <tr>
+        <td>Children Count:</td>
+        <td>
+          <input id="childrenCount" type="text" value="10" />
+        </td>
+      </tr>
+      <tr>
+        <td>Container flex-direction:</td>
+        <td>
+          <select id="flexDirections">
+            <option>row</option>
+            <option>row-reverse</option>
+            <option>column</option>
+            <option>column-reverse</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Container flex-wrap:</td>
+        <td>
+          <select id="flexWraps">
+            <option>nowrap</option>
+            <option>wrap</option>
+            <option>wrap-reverse</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Container flex-flow:</td>
+        <td>
+          <select id="flexFlows">
+            <option></option>
+            <option>row wrap</option>
+            <option>row-reverse nowrap</option>
+            <option>column wrap-reverse</option>
+            <option>column wrap</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Container justify-content:</td>
+        <td>
+          <select id="justifyContents">
+            <option></option>
+            <option>start</option>
+            <option>center</option>
+            <option>space-between</option>
+            <option>space-around</option>
+            <option>space-evenly</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td colspan="2">
+          <button id="submitButton">Submit</button>
+        </td>
+      </tr>
+    </table>
 
     <div id="container" class="container"></div>
     <script>
-      let counter = 10;
-      for (let i = 0; i < counter; i++) {
-        let divElement = document.createElement('div');
-        divElement.className = 'item';
-        divElement.innerText = `This is box ${i}`;
-        let container = document.getElementById('container');
-        container.appendChild(divElement);
+      function createChildren() {
+        let counter = document.getElementById('childrenCount').value;
+        for (let i = 0; i < counter; i++) {
+          let divElement = document.createElement('div');
+          divElement.className = 'item';
+          divElement.innerText = `This is box ${i}`;
+          let container = document.getElementById('container');
+          container.appendChild(divElement);
+        }
+      }
+      createChildren();
+      function removeAllChildren(container) {
+        while (container.hasChildNodes()) {
+          container.removeChild(container.firstChild);
+        }
       }
     </script>
     <script>
       let submitButton = document.getElementById('submitButton');
       submitButton.addEventListener('click', () => {
         let container = document.getElementById('container');
-        let flowDirectionTxt = document.getElementById('flowDirectionTxt');
-        container.style.flexDirection = flowDirectionTxt.value;
+        removeAllChildren(container);
+        createChildren();
+        // get values
+        let flexDirections = document.getElementById('flexDirections');
+        let flexWraps = document.getElementById('flexWraps');
+        let flexFlows = document.getElementById('flexFlows');
+        let justifyContents = document.getElementById('justifyContents');
+
+        // set values
+        container.style.flexDirection = flexDirections.value;
+        container.style.flexWrap = flexWraps.value;
+        if (flexFlows.value.length > 0) {
+          container.style.flexFlow = flexFlows.value;
+        }
+        if (justifyContents.value.length > 0) {
+          container.style.justifyContent = justifyContents.value;
+        }
       });
     </script>
   </body>
