@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      body {
+        background-color: #cccccc;
+      }
+      .container {
+        display: flex;
+        flex-direction: row;
+        background-color: rgb(245, 102, 102);
+        padding: 10px;
+        border: 2px solid red;
+      }
+      .item {
+        background-color: blue;
+        color: white;
+        font-weight: bold;
+        width: 150px;
+        height: 150px;
+        margin: 10px;
+      }
+    </style>
+    <h2>Flex Example</h2>
+    <p>
+      Container flex-direction:
+      <input id="flowDirectionTxt" type="text" value="row" />
+      <button id="submitButton">Submit</button>
+    </p>
+
+    <div id="container" class="container"></div>
+    <script>
+      let counter = 10;
+      for (let i = 0; i < counter; i++) {
+        let divElement = document.createElement('div');
+        divElement.className = 'item';
+        divElement.innerText = `This is box ${i}`;
+        let container = document.getElementById('container');
+        container.appendChild(divElement);
+      }
+    </script>
+    <script>
+      let submitButton = document.getElementById('submitButton');
+      submitButton.addEventListener('click', () => {
+        let container = document.getElementById('container');
+        let flowDirectionTxt = document.getElementById('flowDirectionTxt');
+        container.style.flexDirection = flowDirectionTxt.value;
+      });
+    </script>
+  </body>
+</html>
