@@ -35,6 +35,13 @@
         </td>
       </tr>
       <tr>
+        <td>Container width and height:</td>
+        <td>
+          <input id="containerWidth" type="text" value="" />
+          <input id="containerHeight" type="text" value="" />
+        </td>
+      </tr>
+      <tr>
         <td>Container flex-direction:</td>
         <td>
           <select id="flexDirections">
@@ -81,6 +88,30 @@
         </td>
       </tr>
       <tr>
+        <td>Container align-items:</td>
+        <td>
+          <select id="alignItems">
+            <option></option>
+            <option>stretch</option>
+            <option>center</option>
+            <option>start</option>
+            <option>end</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
+        <td>Container align-content:</td>
+        <td>
+          <select id="alignContents">
+            <option></option>
+            <option>start</option>
+            <option>center</option>
+            <option>space-between</option>
+            <option>space-around</option>
+          </select>
+        </td>
+      </tr>
+      <tr>
         <td colspan="2">
           <button id="submitButton">Submit</button>
         </td>
@@ -113,20 +144,26 @@
         removeAllChildren(container);
         createChildren();
         // get values
+        let containerWidth = document.getElementById('containerWidth');
+        let containerHeight = document.getElementById('containerHeight');
         let flexDirections = document.getElementById('flexDirections');
         let flexWraps = document.getElementById('flexWraps');
         let flexFlows = document.getElementById('flexFlows');
         let justifyContents = document.getElementById('justifyContents');
+        let alignItems = document.getElementById('alignItems');
+        let alignContents = document.getElementById('alignContents');
 
         // set values
+        container.style.width = containerWidth.value;
+        container.style.height = containerHeight.value;
         container.style.flexDirection = flexDirections.value;
         container.style.flexWrap = flexWraps.value;
         if (flexFlows.value.length > 0) {
           container.style.flexFlow = flexFlows.value;
         }
-        if (justifyContents.value.length > 0) {
-          container.style.justifyContent = justifyContents.value;
-        }
+        container.style.justifyContent = justifyContents.value;
+        container.style.alignItems = alignItems.value;
+        container.style.alignContent = alignContents.value;
       });
     </script>
   </body>
