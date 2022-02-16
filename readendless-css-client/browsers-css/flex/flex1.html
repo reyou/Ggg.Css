@@ -7,6 +7,7 @@
     <title>Document</title>
   </head>
   <body>
+    <script src="../../javascript/readendless-css-client.js"></script>
     <style>
       body {
         background-color: #cccccc;
@@ -125,17 +126,12 @@
         for (let i = 0; i < counter; i++) {
           let divElement = document.createElement('div');
           divElement.className = 'item';
-          divElement.innerText = `This is box ${i}`;
+          divElement.innerText = `This is box ${i + 1}`;
           let container = document.getElementById('container');
           container.appendChild(divElement);
         }
       }
       createChildren();
-      function removeAllChildren(container) {
-        while (container.hasChildNodes()) {
-          container.removeChild(container.firstChild);
-        }
-      }
     </script>
     <script>
       let submitButton = document.getElementById('submitButton');
