@@ -7,9 +7,130 @@
     <title>Document</title>
   </head>
   <body>
-    <a
-      href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries"
-      >Using media queries</a
-    >
+    <style>
+      .header {
+        background-color: rgb(35, 33, 33);
+        color: white;
+        text-align: center;
+        padding: 10px;
+      }
+      .header a {
+        color: white;
+        text-decoration: none;
+      }
+    </style>
+    <style>
+      /* mouse, touch pad */
+      @media (hover: hover) and (pointer: fine) {
+        .mouseOrTouchStyle {
+          background-color: red;
+        }
+      }
+      /* Nintendo Wii controller, Microsoft Kinect */
+      @media (hover: hover) and (pointer: coarse) {
+        .mouseOrTouchStyle {
+          background-color: magenta;
+        }
+      }
+
+      /* stylus-based screens */
+      @media (hover: none) and (pointer: fine) {
+        .mouseOrTouchStyle {
+          background-color: blue;
+        }
+      }
+      /* smartphones, touchscreens */
+      @media (hover: none) and (pointer: coarse) {
+        .mouseOrTouchStyle {
+          background-color: green;
+        }
+      }
+    </style>
+    <style>
+      .visible640 {
+        display: none;
+      }
+      @media (max-width: 640px) {
+        .visible640 {
+          background-color: green;
+          display: block;
+          height: 20px;
+        }
+      }
+    </style>
+    <style>
+      .landscape {
+        background-color: red;
+        color: white;
+        padding: 10px;
+      }
+      @media (min-width: 30px) and (orientation: landscape) {
+        .landscape {
+          background-color: green;
+        }
+      }
+    </style>
+    <style>
+      .portrait {
+        background-color: red;
+        color: white;
+        padding: 10px;
+      }
+      @media (min-width: 30px) and (orientation: portrait) {
+        .portrait {
+          background-color: green;
+        }
+      }
+    </style>
+    <style>
+      .between480and640 {
+        background-color: rgb(172, 74, 74);
+        color: white;
+        margin-top: 20px;
+        padding: 10px;
+      }
+      @media (min-width: 480px) and (max-width: 640px) {
+        .between480and640 {
+          background-color: green;
+        }
+      }
+    </style>
+    <div>
+      <h1 class="header">
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries"
+          >Using media queries</a
+        >
+      </h1>
+      <div class="mouseOrTouchStyle">
+        <div>
+          @media (hover: hover) { .mouseOnlyStyle { background-color: red; } }
+        </div>
+        <div>
+          @media (hover: none) { .mouseOnlyStyle { background-color: green; } }
+        </div>
+        <p>
+          This div will have red background only devices with mouse input, if
+          this page will be rendered by a mobile (touch screen) device then
+          background will be green.
+        </p>
+      </div>
+      <div>Following will be visible under 640px.</div>
+      <hr />
+      <div class="visible640">
+        This is visible, because it is size is under 640px.
+      </div>
+      <hr />
+      <div class="landscape">
+        @media (min-width: 30px) and (orientation: landscape) { ... }
+      </div>
+      <div class="portrait">
+        @media (min-width: 30px) and (orientation: portrait) { ... }
+      </div>
+      <div class="between480and640">
+        @media (min-width: 480px) and (max-width: 640px) { .between480and640 {
+        background-color: green; } }
+      </div>
+    </div>
   </body>
 </html>
