@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+        /* Selects the root element of the document:
+   <html> in the case of HTML */
+      :root {
+        --main-color: rgb(204, 27, 0);
+        --accent-color: #006;
+      }
+      /* The rest of the CSS file */
+        #foo h1 {
+         color: var(--main-color);
+        }
+    </style>
+  </head>
+  <body>
+      <div id="foo">
+        <h1>
+            This is header using custom properties
+        </h1>
+      </div>
+      
+      <p>
+          <div>
+            The :root CSS pseudo-class matches the root element of a tree representing the document. In HTML, :root represents the <html> element and is identical to the selector html, except that its specificity is higher.
+                <a href="https://developer.mozilla.org/en-US/docs/Web/CSS/:root">
+                    https://developer.mozilla.org/en-US/docs/Web/CSS/:root
+                  </a>
+          </div>
+      </p>
+   <p>
+    <a href="https://drafts.csswg.org/css-variables/">https://drafts.csswg.org/css-variables/</a>
+   </p>
+  </body>
+</html>
