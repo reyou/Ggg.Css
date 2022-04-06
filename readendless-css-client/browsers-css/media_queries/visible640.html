@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <style>
+      .visible640 {
+        display: none;
+      }
+      @media (max-width: 640px) {
+        .visible640 {
+          background-color: green;
+          display: block;
+          height: 20px;
+        }
+      }
+    </style>
+
+    <div>
+      <h1 class="header">
+        <a
+          href="https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries"
+          >Using media queries</a
+        >
+      </h1>
+      <div>Following will be visible under 640px.</div>
+      <hr />
+      <div class="visible640">
+        This is visible, because it is size is under 640px.
+      </div>
+      <hr />
+    </div>
+  </body>
+</html>
