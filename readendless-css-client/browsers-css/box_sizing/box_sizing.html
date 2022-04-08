@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Box Sizing</title>
+    <style>
+        .noBoxSizing {
+            margin: 0px;
+            padding: 0px;
+            background-color: rgb(46, 42, 165);
+            color: white;
+            font-weight: bold;
+            width: 300px;
+            height: 200px;
+            display: block;
+            padding-right: 100px;
+        }
+        .applyBoxSizing {
+            margin: 0px;
+            padding: 0px;
+            box-sizing: border-box;
+            background-color: brown;
+            color: white;
+            font-weight: bold;
+            width: 300px;
+            height: 200px;
+            display: block;
+            padding-right: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="noBoxSizing">
+        No box sizing
+    </div>
+    <div class="applyBoxSizing">
+        Box sizing applied. Mesela bu kutu icerisinde "box-sizing" uygulandigi icin,
+        "width: 300px" aynen korunuyor. Ama tepedekinde saga dogru "padding-right: 100px" genisletiyor.
+    </div>
+</body>
+</html>
