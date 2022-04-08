@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    .container {
+      display: flex;
+      padding: 10px;
+      border: 2px solid black;
+    }
+    .item {
+      margin: 10px;
+      border: 2px solid gray;
+      padding: 20px;
+    }
+  </style>
+  <body>
+    <div class="container">
+      <div class="item">
+        <h3>Circle</h3>
+        <svg height="100" width="100">
+          <circle
+            cx="50"
+            cy="50"
+            r="40"
+            stroke="black"
+            stroke-width="3"
+            fill="red"
+          />
+          Sorry, your browser does not support inline SVG.
+        </svg>
+      </div>
+      <div class="item">
+        <h3>Rectangle</h3>
+        <svg width="400" height="110">
+          <rect
+            width="300"
+            height="100"
+            style="fill: rgb(0, 0, 255); stroke-width: 3; stroke: rgb(0, 0, 0)"
+          />
+          Sorry, your browser does not support inline SVG.
+        </svg>
+      </div>
+      <div class="item">
+        <h3>Ellipse</h3>
+        <svg height="140" width="500">
+          <ellipse
+            cx="200"
+            cy="80"
+            rx="100"
+            ry="50"
+            style="fill: yellow; stroke: purple; stroke-width: 2"
+          />
+          Sorry, your browser does not support inline SVG.
+        </svg>
+      </div>
+    </div>
+    <div>
+      <h2>References</h2>
+      <ul>
+        <li>
+          <a href="https://www.w3schools.com/graphics/svg_examples.asp"
+            >https://www.w3schools.com/graphics/svg_examples.asp</a
+          >
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
